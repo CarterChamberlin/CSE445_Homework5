@@ -2,41 +2,45 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+     <asp:Panel ID="serviceTitle" runat="server" HorizontalAlign="Center">
+        <h1><b>Web Application Portotype</b></h1>
+    </asp:Panel>
+
+    <asp:Panel runat="server" ID="serviceInfo" CssClass="jumbotron" BorderWidth="3">
+        <h3>Application Information</h3>
+        <hr />
+        <h4>This Web Application has been implemented for CSE445 - Homework 5. This application takes 3 of the Web Services developed as part of
+            Homework 3, and utilizes them in a combined, web-based, online-article processor. The selected applications will take a web URL, and return to the user
+            a series of information about the article's referenced links, top [10] content words, and sentences using a user-specified word.
+        </h4>
+    </asp:Panel>
+
+    <asp:Panel runat="server" ID="input" CssClass="jumbotron" BorderWidth="3">
+        <h3>Article & Search Term Input:</h3>
+        <hr />
+        <asp:Label Text="Enter URL Here:   " runat="server" />
+        <asp:TextBox ID="urlInput" runat="server" width="800"/>
+        <br />
+        <br />
+        <asp:Label Text="Enter Sentence Search Term Here:   " runat="server" />
+        <asp:TextBox ID="searchInput" runat="server" Width="800" />
+        <br />
+        <br />
+        <asp:Button Text="Compute Information" runat="server" />
+    </asp:Panel>
+
+    <asp:Panel runat="server" ID="viewStats" CssClass="jumbotron" BorderWidth="3">
+        <h3>View Information</h3>
+        <hr />
+        <asp:Button ID="viewWords" Text="View Content Words" runat="server" HorizontalAlign="Center" />
+        <br />
+        <br />
+        <asp:Button ID="viewSentences" Text="View Searched Sentences" runat="server" HorizontalAlign="Center" />
+        <br />
+        <br />
+        <asp:Button ID="viewLinks" Text="View Referenced Links" runat="server" HorizontalAlign="Center" />
+    </asp:Panel>
+
 
 </asp:Content>
